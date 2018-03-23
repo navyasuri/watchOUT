@@ -15,64 +15,27 @@ express()
     .set('views', '/views')
     .set('view engine', 'pug')
 
-    .get('/', (req, res) => res.send("Woo!"))
-    .get('/api/*', jsonLoad)
-    .get('/edit/*', jsonEdit)
-    .post('/save/*', jsonSave)
+    //.get('/api/*', (req, res) => res.send("Woo!"))
+    .get('/', jsonLoad)
 
     .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-// TODO: Could the load and edit functions be merged? Rather similar. Also, why can't this be an express-style function?
-// Pull JSON data based on url request, serve to client:
+// Pull JSON, serve to client:
 function jsonLoad(req, res) {
-    let outData
-    cutPath(req.url)
-    fs.readFile("public/data/" + file + ".json", (err, inData) => {
+    let data
+    //cutPath(req.url)
+    fs.readFile("data/announcements.json", (err, inData) => {
         // TODO: Edit to avoid hard server crashes:
         if (err) {
-            res.status(404).send('Bad Request')
+            res.status(404).send('Watch out for this Bad Request!')
         }
-        outData = JSON.parse(inData)
-        res.send(outData)
-    })
-}
-
-function jsonEdit(req, res) {
-    res.header('Access-Control-Allow-Origin', 'nyuad-im.github.io')
-    res.header('Access-Control-Allow-Origin', 'nyuad.im')
-    res.header('Access-Control-Allow-Origin', 'radio.nyuad.im')
-
-    let pugData
-    cutPath(req.url)
-    fs.readFile("public/data/" + file + ".json", (err, inData) => {
-        // TODO: Edit to avoid hard server crashes:
-        if (err) {
-            res.status(400).send('Bad Request')
-        }
-        pugData = JSON.parse(inData)
-        // Serve the requested section based on the pug spec:
-        res.render(file + '.pug', {"data": pugData})
-    })
-}
-
-function jsonSave(req, res) {
-    res.header('Access-Control-Allow-Origin', 'nyuad-im.github.io')
-    res.header('Access-Control-Allow-Origin', 'nyuad.im')
-    res.header('Access-Control-Allow-Origin', 'radio.nyuad.im')
-
-    fs.writeFile("public/data/" + file + ".json", JSON.stringify(req.body.data), (err) => {
-        if (err) {
-            res.status(400)
-            res.send({error: err})
-        }else{
-	        res.status(200)
-	        res.send({message: 'successfully saved '+file+'!'})
-	       }
+        data = JSON.parse(inData)
+        res.render('announcements.pug', {"data": pugData})
     })
 }
 
 function cutPath(url) {
-    let urlBits = url.split('/');
-    let wantedBit = urlBits[urlBits.length - 1];
-    file = wantedBit;
+    let urlSections = url.split('/');
+    let wantedSection = urlSections[urlSections.length - 1];
+    file = wantedSection;
 }
