@@ -8,12 +8,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
-    "npm": "^5.7.1",
-    "pug": "^2.0.0-rc.4"
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
   },
   "repository": {
     "type": "git",
@@ -25,8 +21,5 @@
     "url": "https://github.com/navyasuri/eventful/issues"
   },
   "homepage": "https://github.com/navyasuri/eventful#readme",
-  "dependencies": {
-    "express": "^4.16.3"
-  },
   "devDependencies": {}
 }
