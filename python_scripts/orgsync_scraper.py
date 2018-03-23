@@ -41,11 +41,13 @@ for i in rj['data']:
             result.append(d)
             x += 1
 
-# Result is the full JSON file
-sorted_result = sorted(result, key = lambda k: k['date'])
 # fp = open('myJSON.txt', 'w')
 # fp.write(result)
 # fp.close()
+
+# Result is the full JSON file
+sorted_result = sorted(result, key = lambda k: k['date'])
+
 
 with open('events.json', 'w') as fp:
     json.dump(sorted_result, fp)
