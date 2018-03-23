@@ -15,7 +15,8 @@ for i in rj['data']:
         startdt = i['dates'][0]['starts_at'].split('T')
         enddt = i['dates'][0]['ends_at'].split('T')
         d['title'] = i['title']
-        d['date'] = startdt[0]
+        d['startDate'] = startdt[0]
+        d['endDate'] = enddt[0]
         d['startTime'] = startdt[1][:-1]
         d['endTime'] = enddt[1][:-1]
         d['location'] = i['location']
@@ -30,7 +31,8 @@ for i in rj['data']:
             startdt = i['dates'][x]['starts_at'].split('T')
             enddt = i['dates'][x]['ends_at'].split('T')
             d['title'] = i['title']
-            d['date'] = startdt[0]
+            d['startDate'] = startdt[0]
+            d['endDate'] = enddt[0]
             d['startTime'] = startdt[1][:-1]
             d['endTime'] = enddt[1][:-1]
             d['location'] = i['location']
