@@ -15,7 +15,7 @@ express()
     .set('views', '/views')
     .set('view engine', 'pug')
 
-    .get('/', (req, res) => res.redirect('/edit/'))
+    .get('/', (req, res) => res.send("Woo!"))
     .get('/api/*', jsonLoad)
     .get('/edit/*', jsonEdit)
     .post('/save/*', jsonSave)
