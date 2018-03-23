@@ -39,6 +39,10 @@ function jsonLoad(req, res) {
     })
 }
 
+
+
+// Varoius attempts at sending an HTML Alert Prompt via JavaScript and sending those data into selenium_script.py for authentication:
+
 // // Run python to scrape OrgSync for events, save to data folder:
 // function scrape(req, res) {
 //     // var username;
