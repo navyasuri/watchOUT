@@ -10,14 +10,18 @@ html
         div.container
             each item in data
                 div.entry
-                    h3 announcement
-                    div.legend title
+                    h3 Event
+                    div.legend Title
                     p.title= item.title
-                    div.legend date
+                    div.legend Date
                     p.date= item.date
-                    div.legend location
+                    div.legend Time
+                    p.time= item.startTime + ' to ' + item.endTime
+                    div.legend Location
                     p.location= item.location
-                    div.legend description
+                    div.legend Description
                     p.desc= item.description
+                    div.legend Organizer
+                    p.org= item.organizer
                 br
             div.footer

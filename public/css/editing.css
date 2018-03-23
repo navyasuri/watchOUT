@@ -28,6 +28,16 @@ p, textarea, li {
 	color: black;
 }
 
+/* p.startTime {
+	float: left;
+	width: 50%;
+}
+
+p.endTime {
+	float: right;
+	width: 50%;
+} */
+
 input.url, input.human {
 	width: 24%;
 	margin-right: 1%;
