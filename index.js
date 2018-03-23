@@ -12,7 +12,7 @@ express()
     .use(cors())
     .use(bp.json())
     .use(bp.urlencoded({extended: true}))
-    .set('views', '/views/')
+    .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'pug')
 
     //.get('/api/*', (req, res) => res.send("Woo!"))
@@ -24,13 +24,18 @@ express()
 function jsonLoad(req, res) {
     let data
     //cutPath(req.url)
+<<<<<<< HEAD
     fs.readFile("public/data/announcements.json", (err, inData) => {
+=======
+    fs.readFile('public/data/announcements.json', (err, inData) => {
+>>>>>>> 8aca4d933ed0cf06d57ba56b5cc133c232321d53
         // TODO: Edit to avoid hard server crashes:
         if (err) {
             res.status(404).send('Watch out for this Bad Request!')
         }
         data = JSON.parse(inData)
-        res.render('announcements.pug', {"data": data})
+        let pugPath = path.join(__dirname, 'public/views/announcements.pug')
+        res.render(pugPath, {"data": data})
     })
 }
 
