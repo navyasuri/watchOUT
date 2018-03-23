@@ -24,11 +24,7 @@ express()
 function jsonLoad(req, res) {
     let data
     //cutPath(req.url)
-<<<<<<< HEAD
-    fs.readFile("public/data/announcements.json", (err, inData) => {
-=======
     fs.readFile('public/data/announcements.json', (err, inData) => {
->>>>>>> 8aca4d933ed0cf06d57ba56b5cc133c232321d53
         // TODO: Edit to avoid hard server crashes:
         if (err) {
             res.status(404).send('Watch out for this Bad Request!')
