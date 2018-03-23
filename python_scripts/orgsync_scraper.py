@@ -38,9 +38,6 @@ for i in rj['data']:
             result.append(d)
             x += 1
     
-for i in result:
-    print('\n', i, '\n')
-
-
-    
-    
+fp = open('myJSON.txt', 'w')
+fp.write(result)
+fp.close()
