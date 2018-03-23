@@ -3,26 +3,21 @@ html
     head
         script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", 
   crossorigin="anonymous", type="text/javascript")
-        script(src="../js/announcements-parser.js", type="text/javascript")
         script(src="../js/utilities.js", type="text/javascript")
         link(rel='stylesheet' href='../css/editing.css')
     body
         h1#category NYUAD Events
         div.container
-            each announcement in data
+            each item in data
                 div.entry
                     h3 announcement
                     div.legend title
-                    p.title(innerHTML= announcement.title)
+                    p.title= item.title
                     div.legend date
-                    p.date(value= announcement.date)
+                    p.date= item.date
                     div.legend location
-                    p.location(value= announcement.location)
+                    p.location= item.location
                     div.legend description
-                    p.desc(value= announcement.description)
-                    div.legend link url + text
-                    div.links
-                        p.url(value= announcement.links.url, placeholder= 'url')
-                        p.text(value= announcement.links.text, placeholder= 'text')
+                    p.desc= item.description
                 br
             div.footer
