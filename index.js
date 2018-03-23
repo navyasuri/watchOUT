@@ -55,46 +55,46 @@ function add(req, res) {
 // Varoius attempts at sending an HTML Alert Prompt via JavaScript and sending those data into selenium_script.py for authentication:
 
 // // Run python to scrape OrgSync for events, save to data folder:
-function scrape(req, res) {
-    // var username;
-    // var password;
-    // prompt('Whats your name?', function (input) {
-    //     console.log(input);
-    //     process.exit();
-    // });
-
-
-    // prompt.start();
-    // prompt.get(['username', 'email'], function (err, result) {
-    //     username = result.username;
-    //     password = result.password;
-    // });
-    // console.log(username);
-
-
-    // if (person == null || person == "") {
-    //     res.status(404).send('No name sent. It\'s ok, you don\'t have to trust us.')
-    // } else {
-    //     var shell = new py('script.py', { mode: 'text '});
-    //     shell.send('hello world!');
-    // }
-
-    // console.log("Calling selenium")
-    // selenium.on('message', function (message) {
-    //   // received a message sent from the Python script (a simple "print" statement)
-    //   console.log(message);
-
-
-
-    py.run('python_scripts/selenium_script.py', function (err) {
-      if (err) {
-            console.log(err)
-            res.status(404).send('Watch out for this Bad Request!')
-            console.log("End of error, fool")
-      }
-      py.end(jsonLoad);
-    })
-}
+// function scrape(req, res) {
+//     // var username;
+//     // var password;
+//     // prompt('Whats your name?', function (input) {
+//     //     console.log(input);
+//     //     process.exit();
+//     // });
+//
+//
+//     // prompt.start();
+//     // prompt.get(['username', 'email'], function (err, result) {
+//     //     username = result.username;
+//     //     password = result.password;
+//     // });
+//     // console.log(username);
+//
+//
+//     // if (person == null || person == "") {
+//     //     res.status(404).send('No name sent. It\'s ok, you don\'t have to trust us.')
+//     // } else {
+//     //     var shell = new py('script.py', { mode: 'text '});
+//     //     shell.send('hello world!');
+//     // }
+//
+//     // console.log("Calling selenium")
+//     // selenium.on('message', function (message) {
+//     //   // received a message sent from the Python script (a simple "print" statement)
+//     //   console.log(message);
+//
+//
+//
+//     py.run('python_scripts/selenium_script.py', function (err) {
+//       if (err) {
+//             console.log(err)
+//             res.status(404).send('Watch out for this Bad Request!')
+//             console.log("End of error, fool")
+//       }
+//       py.end(jsonLoad);
+//     })
+// }
 //
 // function prompt(question, callback) {
 //     var stdin = process.stdin,
