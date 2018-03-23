@@ -21,7 +21,7 @@ for i in rj['data']:
         d['description'] = i['description']
         d['organizer'] = i['portal']['name']
         result.append(d)
-        
+
     else:
         x = 0
         while x<len(i['dates']):
@@ -38,6 +38,8 @@ for i in rj['data']:
             result.append(d)
             x += 1
     
+# Result is the full JSON file
+
 fp = open('myJSON.txt', 'w')
 fp.write(result)
 fp.close()
