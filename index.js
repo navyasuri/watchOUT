@@ -30,7 +30,7 @@ function jsonLoad(req, res) {
             res.status(404).send('Watch out for this Bad Request!')
         }
         data = JSON.parse(inData)
-        res.render('announcements.pug', {"data": pugData})
+        res.render('announcements.pug', {"data": data})
     })
 }
 
