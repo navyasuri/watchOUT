@@ -1,4 +1,5 @@
 import requests
+import json
 from requests import get
 
 response = get("https://api.orgsync.com/api/v3/communities/751/events?key=GGsN7qUoYx1G_v8B3CmLWHP0AmdnvK0ATTpcjYGL-3s&upcoming=true&page=1&per_page=100&after=2018-03-23T12%3A51%3A04.349Z&before=2020-03-23T12%3A51%3A04.349Z&include_opportunities=true")
@@ -37,9 +38,12 @@ for i in rj['data']:
             d['organizer'] = i['portal']['name']
             result.append(d)
             x += 1
-    
+
 # Result is the full JSON file
 
-fp = open('myJSON.txt', 'w')
-fp.write(result)
-fp.close()
+# fp = open('myJSON.txt', 'w')
+# fp.write(result)
+# fp.close()
+
+with open('myJSON.json', 'w') as fp:
+    json.dump(result, fp)

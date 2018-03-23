@@ -23,7 +23,6 @@ express()
 // Pull JSON, serve to client:
 function jsonLoad(req, res) {
     let data
-    //cutPath(req.url)
     fs.readFile('public/data/events.json', (err, inData) => {
         // TODO: Edit to avoid hard server crashes:
         if (err) {
@@ -33,10 +32,4 @@ function jsonLoad(req, res) {
         let pugPath = path.join(__dirname, 'public/views/events.pug')
         res.render(pugPath, {"data": data})
     })
-}
-
-function cutPath(url) {
-    let urlSections = url.split('/');
-    let wantedSection = urlSections[urlSections.length - 1];
-    file = wantedSection;
 }
