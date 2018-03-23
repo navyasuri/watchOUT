@@ -7,7 +7,7 @@ html
         script(src="../js/utilities.js", type="text/javascript")
         link(rel='stylesheet' href='../css/editing.css')
     body
-        h1#category announcements
+        h1#category NYUAD Events
         div.container
             each announcement in data
                 div.entry
@@ -26,4 +26,3 @@ html
                         input.text.entry-field(value= announcement.links.text, placeholder= 'text')
                 br
             div.footer
-                button(onclick="parse()") Click to Save
