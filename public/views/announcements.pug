@@ -13,16 +13,16 @@ html
                 div.entry
                     h3 announcement
                     div.legend title
-                    input.title.entry-field(value= announcement.title)
+                    p.title(innerHTML= announcement.title)
                     div.legend date
-                    input.date.entry-field(value= announcement.date)
+                    p.date(value= announcement.date)
                     div.legend location
-                    input.location.entry-field(value= announcement.location)
+                    p.location(value= announcement.location)
                     div.legend description
-                    textarea.desc.entry-field(cols=80, rows=5)= announcement.description
+                    p.desc(value= announcement.description)
                     div.legend link url + text
                     div.links
-                        input.url.entry-field(value= announcement.links.url, placeholder= 'url')
-                        input.text.entry-field(value= announcement.links.text, placeholder= 'text')
+                        p.url(value= announcement.links.url, placeholder= 'url')
+                        p.text(value= announcement.links.text, placeholder= 'text')
                 br
             div.footer

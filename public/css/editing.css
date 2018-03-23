@@ -22,13 +22,13 @@ h3 {
 	font-size: 1.8em;
 }
 
-input, textarea, li {
+p, textarea, li {
 	margin-top: 0.5em;
 	font-size: 16px;
 	color: black;
 }
 
-input {
+p {
 	width: 50%;
 }
 
@@ -61,10 +61,6 @@ input.text, input.machine {
 	font-weight: normal;
 	margin-top: 20px;
 	width: 100%;
-	float: left;
-}
-
-.entry-field, .entry-field input {
 	float: left;
 }
 
