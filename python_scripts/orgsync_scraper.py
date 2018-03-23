@@ -45,5 +45,5 @@ for i in rj['data']:
 # fp.write(result)
 # fp.close()
 
-with open('myJSON.json', 'w') as fp:
+with open('../public/data/events.json', 'w') as fp:
     json.dump(result, fp)
