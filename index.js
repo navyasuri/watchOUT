@@ -41,12 +41,14 @@ function jsonLoad(req, res) {
 
 // Run python to scrape OrgSync for events, save to data folder:
 function scrape(req, res) {
-    var username;
-    var password;
-    prompt('Whats your name?', function (input) {
-        console.log(input);
-        process.exit();
-    });
+    // var username;
+    // var password;
+    // prompt('Whats your name?', function (input) {
+    //     console.log(input);
+    //     process.exit();
+    // });
+
+
     // prompt.start();
     // prompt.get(['username', 'email'], function (err, result) {
     //     username = result.username;
