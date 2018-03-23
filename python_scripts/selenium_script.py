@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
 import selenium
 import codecs
 import getpass
 import time
-from selenium.webdriver.common.action_chains import ActionChains
+import sys
+from sys import stdin
+#print(sys.stdin)
 
 
 # Set login info
