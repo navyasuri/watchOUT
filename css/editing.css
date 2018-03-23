@@ -1,0 +1,104 @@
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Source Sans Pro', 'Inter UI', Trebuchet MS;
+}
+
+h1{
+	background-color: black;
+	color: white;
+	height: 80px;
+	font-size: 60px;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 0;
+	text-align: center;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+input, textarea, li {
+	margin-top: 0.5em;
+	font-size: 16px;
+	color: black;
+}
+
+input {
+	width: 50%;
+}
+
+input.url, input.human {
+	width: 24%;
+	margin-right: 1%;
+}
+
+input.text, input.machine {
+	width: 24%;
+	margin-left: 1%;
+}
+
+.container {
+	margin-top: 100px;
+	width: 80%;
+	margin-left: 6%;
+}
+
+.entry {
+	width: 100%;
+	float: left;
+	border: 3px solid black;
+	margin: 2%;
+	padding: 2%;
+}
+
+.legend {
+	font-size: 1.3em;
+	font-weight: normal;
+	margin-top: 20px;
+	width: 100%;
+	float: left;
+}
+
+.entry-field, .entry-field input {
+	float: left;
+}
+
+.current {
+	height: 15px;
+	width: 15px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 25%;
+	background-color: black;
+}
+
+.footer button {
+	margin: 0;
+	height: 50px;
+	width: 100%;
+	border: 3px solid white;
+	background-color: black;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+button {
+	margin-top: 0.5em;
+	float: left;
+	width: 15%;
+	border: 0.1em solid black;
+	background-color: white;
+	cursor: pointer;
+	clear: both;
+}
