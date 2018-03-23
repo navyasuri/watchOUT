@@ -1,0 +1,22 @@
+{
+  "name": "nyuadevents",
+  "version": "1.0.0",
+  "description": "eventful",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navyasuri/eventful.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/navyasuri/eventful/issues"
+  },
+  "homepage": "https://github.com/navyasuri/eventful#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
