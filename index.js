@@ -12,7 +12,7 @@ express()
     .use(cors())
     .use(bp.json())
     .use(bp.urlencoded({extended: true}))
-    .set('views', '/views/')
+    .set('views', __dirname + '/views')
     .set('view engine', 'pug')
 
     //.get('/api/*', (req, res) => res.send("Woo!"))
