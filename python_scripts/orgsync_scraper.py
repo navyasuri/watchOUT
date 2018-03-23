@@ -21,7 +21,7 @@ for i in rj['data']:
         d['description'] = i['description']
         d['organizer'] = i['portal']['name']
         result.append(d)
-        
+
     else:
         x = 0
         while x<len(i['dates']):
@@ -37,10 +37,6 @@ for i in rj['data']:
             d['organizer'] = i['portal']['name']
             result.append(d)
             x += 1
-    
-for i in result:
-    print('\n', i, '\n')
 
-
-    
-    
+# Result is the full JSON file
+print(result)

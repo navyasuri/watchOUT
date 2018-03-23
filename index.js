@@ -24,13 +24,13 @@ express()
 function jsonLoad(req, res) {
     let data
     //cutPath(req.url)
-    fs.readFile('public/data/announcements.json', (err, inData) => {
+    fs.readFile('public/data/events.json', (err, inData) => {
         // TODO: Edit to avoid hard server crashes:
         if (err) {
             res.status(404).send('Watch out for this Bad Request!')
         }
         data = JSON.parse(inData)
-        let pugPath = path.join(__dirname, 'public/views/announcements.pug')
+        let pugPath = path.join(__dirname, 'public/views/events.pug')
         res.render(pugPath, {"data": data})
     })
 }
