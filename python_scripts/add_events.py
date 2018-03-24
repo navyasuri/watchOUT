@@ -37,9 +37,11 @@ for e in jjson[:10]:
       },
     }
 
-    event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()
+    event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()    
     og['link'] = event.get('htmlLink')
     res.append(og)
+
+
 
 with open('linked_events.json', 'w', encoding='utf-8') as fin:
     json.dump(res, fin)
