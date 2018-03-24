@@ -114,7 +114,6 @@ p.endTime {
 button {
 	margin-top: 1em;
 	position: relative;
-	left:50%;
 	border: 0.1em solid black;
 	background-color: white;
 	cursor: pointer;

@@ -57,15 +57,14 @@ for e in jjson[:10]:
     }
 
     data = {
-	    'title': event['title'],
-	    'start': event['startDate'].replace('-', '') + 'T' + event['startTime'].replace(':', '').replace('.', '')[:-2],
-	    'end': event['endDate'].replace('-', '') + 'T' + event['endTime'].replace(':', '').replace('.', '')[:-2],
-	    'location': event['location'],
-	    'description': event['description'],
+	    'title': e['title'],
+	    'start': e['startDate'].replace('-', '') + 'T' + e['startTime'].replace(':', '').replace('.', '')[:-2],
+	    'end': e['endDate'].replace('-', '') + 'T' + e['endTime'].replace(':', '').replace('.', '')[:-2],
+	    'location': e['location'],
+	    'description': e['description'],
 	    'alarm': 'watch out'
 	}
-
-	fdata = template.format(**data)
+    fdata = template.format(**data)
 
     event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()
     og['link'] = event.get('htmlLink')

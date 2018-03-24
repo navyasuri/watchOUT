@@ -3,6 +3,7 @@ html
     head
         script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", 
   crossorigin="anonymous", type="text/javascript")
+        script(src="views/download.js", type="text/javascript")
         link(rel='stylesheet' href='../css/style.css')
     body
         h1#category NYUAD Events
@@ -23,7 +24,6 @@ html
                     p.org= item.organizer
                     a(href= item.link)
                         button(type= button) Add to Your Calendar
-                    a(href= download(cal.ics, item.cal))
-                        button(type= button) Download .cal File
+                        button(onclick= "download('cal.ics', #{item.cal})") Download .cal File
                 br
             div.footer
