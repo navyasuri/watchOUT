@@ -181,12 +181,11 @@ for i in rj['result']:
     startdt = i['startDate'].split('T')
     try:
         enddt = i['endDate'].split('T')
-	except:
-		startT = startdt[1][0:2]
-		endT = str(int(startT)+1)
-		endT = endT + startdt[1][2:]
-		enddt = [startdt[0], endT ]
-
+    except:
+        startT = startdt[1][0:2]
+        endT = str(int(startT)+1)
+        endT = endT + startdt[1][2:]
+        enddt = [startdt[0], endT ]
     d['title'] = i['eventTitle']
     d['startDate'] = startdt[0]
     d['endDate'] = enddt[0]
