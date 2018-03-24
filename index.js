@@ -41,7 +41,9 @@ function jsonLoad(req, res) {
 }
 
 function add(req, res) {
+    console.log("add called")
     py.run('python_scripts/add_events.py', function (err) {
+      console.log("py run")
       if (err) {
             console.log(err)
             res.status(404).send('Watch out for this Bad Request!')
