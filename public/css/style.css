@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "Elianto";
 	src: url("fonts/Elianto-Regular.ttf");
-	src: 
+	src:
 	url("fonts/Elianto-Regular.otf") format("opentype"),;
 	}
 
@@ -15,7 +15,7 @@ body {
 }
 
 h1{
-	background-color: black;
+	background-color: #	57068C;
 	color: white;
 	height: 80px;
 	font-size: 60px;
@@ -41,10 +41,16 @@ p, textarea, li {
 
 @media (max-aspect-ratio: 1/1){
 	h3{
-		font-size: 2em;
+		font-size: 2.5em;
 	}
 	p{
 		font-size: 22px;
+	}
+	.legend{
+		font-size: 1.7em;
+	}
+	button {
+		font-size: 1.5em;
 	}
 }
 
@@ -106,11 +112,10 @@ p.endTime {
 }
 
 button {
-	margin-top: 0.5em;
-	float: left;
-	width: 15%;
+	margin-top: 1em;
+	position: relative;
+	left:50%;
 	border: 0.1em solid black;
 	background-color: white;
 	cursor: pointer;
-	clear: both;
 }
