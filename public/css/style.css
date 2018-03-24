@@ -58,16 +58,6 @@ p.endTime {
 	width: 50%;
 } */
 
-input.url, input.human {
-	width: 24%;
-	margin-right: 1%;
-}
-
-input.text, input.machine {
-	width: 24%;
-	margin-left: 1%;
-}
-
 .container {
 	margin-top: 100px;
 	width: 80%;
