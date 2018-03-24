@@ -24,6 +24,7 @@ html
                     p.org= item.organizer
                     a(href= item.link)
                         button(type= button) Add to Your Calendar
-                        button(onclick= "download('cal.ics', #{item.cal})") Download .cal File
+                    a(href= item.cal)
+                        button(onclick= "download(#{item.cal})") Download cal File
                 br
             div.footer
