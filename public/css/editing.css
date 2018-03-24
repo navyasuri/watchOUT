@@ -1,3 +1,12 @@
+@font-face {
+	font-family: "Elianto";
+	src: url("fonts/Elianto-Regular.ttf");
+	src: 
+	url("fonts/Elianto-Regular.otf") format("opentype"),;
+	}
+
+	/* <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> */
+
 
 body {
 	margin: 0;
@@ -10,6 +19,7 @@ h1{
 	color: white;
 	height: 80px;
 	font-size: 60px;
+	font-family: 'Elianto-Regular', sans-serif;
 	width: 100%;
 	position: fixed;
 	left: 0;
@@ -19,6 +29,7 @@ h1{
 }
 
 h3 {
+	font-family: 'Raleway';
 	font-size: 1.8em;
 }
 
@@ -26,6 +37,15 @@ p, textarea, li {
 	margin-top: 0.5em;
 	font-size: 16px;
 	color: black;
+}
+
+@media (max-aspect-ratio: 1/1){
+	h3{
+		font-size: 2em;
+	}
+	p{
+		font-size: 22px;
+	}
 }
 
 /* p.startTime {
@@ -67,7 +87,7 @@ input.text, input.machine {
 	font-weight: normal;
 	margin-top: 20px;
 	width: 100%;
-	float: left;
+	float: center;
 }
 
 .current {
