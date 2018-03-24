@@ -9,7 +9,7 @@ creds = store.get()
 if not creds or creds.invalid:
     flow = client.flow_from_clientsecrets('client_secret.json', SCOPES)
     creds = tools.run_flow(flow, store)
-GCAL = apiclient.discovery.build('calendar', 'v3', http=creds.authorize(Http()))
+GCAL = googleapiclient.discovery.build('calendar', 'v3', http=creds.authorize(Http()))
 
 #for each event in JSON:
 event = {
