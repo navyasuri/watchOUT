@@ -20,7 +20,7 @@ with open('python_scripts/events.json', 'r') as jfile:
     text = jfile.read()
     jjson = json.loads(text)
 
-for e in jjson[:30]:
+for e in jjson[160]:
     event = {
       'summary': e['title'],
       'location': e['location'],
