@@ -21,6 +21,25 @@ with open('python_scripts/events.json', 'r') as jfile:
     text = jfile.read()
     jjson = json.loads(text)
 
+template = '''BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:{title}
+DTSTART;TZID=Asia/Dubai:{start}
+DTEND;TZID=Asia/Dubai:{end}
+LOCATION:{location}
+DESCRIPTION: {description}
+STATUS:CONFIRMED
+SEQUENCE:3
+BEGIN:VALARM
+TRIGGER:-PT10M
+DESCRIPTION:{alarm}
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR'''
+
 for e in jjson[:10]:
     og = e
     event = {
@@ -37,8 +56,20 @@ for e in jjson[:10]:
       },
     }
 
-    event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()    
+    data = {
+	    'title': event['title'],
+	    'start': event['startDate'].replace('-', '') + 'T' + event['startTime'].replace(':', '').replace('.', '')[:-2],
+	    'end': event['endDate'].replace('-', '') + 'T' + event['endTime'].replace(':', '').replace('.', '')[:-2],
+	    'location': event['location'],
+	    'description': event['description'],
+	    'alarm': 'watch out'
+	}
+
+	fdata = template.format(**data)
+
+    event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()
     og['link'] = event.get('htmlLink')
+    og['cal'] = fdata
     res.append(og)
 
 
