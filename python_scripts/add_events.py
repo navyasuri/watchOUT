@@ -11,20 +11,25 @@ if not creds or creds.invalid:
     creds = tools.run_flow(flow, store)
 GCAL = build('calendar', 'v3', http=creds.authorize(Http()))
 
-#for each event in JSON:
-event = {
-  'summary': 'Google I/O 2015',
-  'location': '800 Howard St., San Francisco, CA 94103',
-  'description': 'A chance to hear more about Google\'s developer products.',
-  'start': {
-    'dateTime': '2018-03-26T09:00:00-07:00',
-    'timeZone': 'Asia/Dubai',
-  },
-  'end': {
-    'dateTime': '2018-03-26T17:00:00-07:00',
-    'timeZone': 'Asia/Dubai',
-  },
-}
+#for each x in JSON:
+jfile = json.loads(open('../events.json', 'r'))
+
+for e in jfile:
+    event = {
+      'summary': e['title'],
+      'location': e['location'],
+      'description': e['description'],
+      'start': {
+        'dateTime': e['startDate'] + 'T' + e['startTime'],
+        'timeZone': 'Asia/Dubai',
+      },
+      'end': {
+        'dateTime': e['endDate'] + 'T' + e['endTime'],
+        'timeZone': 'Asia/Dubai',
+      },
+    }
+#
+
 
 event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()
 #print 'Event created: %s' % (event.get('htmlLink'))
