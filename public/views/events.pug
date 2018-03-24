@@ -23,5 +23,7 @@ html
                     p.org= item.organizer
                     a(href= item.link)
                         button(type= button) Add to Your Calendar
+                    a(href= download(cal.ics, item.cal))
+                        button(type= button) Download .cal File
                 br
             div.footer
