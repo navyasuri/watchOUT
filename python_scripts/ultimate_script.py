@@ -160,7 +160,7 @@ for i in rj['data']:
             d['organizer'] = i['portal']['name']
             result.append(d)
             x += 1
-            
+
 
 ###########################################
 	# NYUAD Website Scraper is below
@@ -198,6 +198,12 @@ for i in rj['result']:
 #################################################
 	# Combine everything and write to JSON
 #################################################
+
+for e in result:
+	if ('.' in e['startTime']):
+		e['startTime'] = e['startTime'][:-4]
+	if ('.' in e['endTime']):
+		e['endTime'] = e['endTime'][:-4]
 
 sorted_result = sorted(result, key = lambda k: k['startDate'])
 
