@@ -1,9 +1,9 @@
 from __future__ import print_function
 import apiclient
-from httplib2 import http
+from httplib2 import Http
 from oauth2client import file, client, tools
 
-SCOPES = 'https://www/googleapis.com/auth/calendar'
+SCOPES = 'https://www.googleapis.com/auth/calendar'
 store = file.Storage('storage.json')
 creds = store.get()
 if not creds or creds.invalid:
@@ -17,12 +17,12 @@ event = {
   'location': '800 Howard St., San Francisco, CA 94103',
   'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
-    'dateTime': '2018-03-28T09:00:00-07:00',
-    'timeZone': 'Dubai',
+    'dateTime': '2018-03-27T09:00:00-07:00',
+    'timeZone': 'Asia/Dubai',
   },
   'end': {
-    'dateTime': '2018-03-28T17:00:00-07:00',
-    'timeZone': 'Dubai',
+    'dateTime': '2018-03-27T17:00:00-07:00',
+    'timeZone': 'Asia/Dubai',
   },
 }
 

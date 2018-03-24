@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import selenium
+import boto
 import codecs
 import getpass
 import time
@@ -11,8 +12,8 @@ import json
 
 
 # Set login info
-myusername=input("username: ")
-mypassword=getpass.getpass("password: ")
+# myusername=input("username: ")
+# mypassword=getpass.getpass("password: ")
 
 # Open browser
 browser = webdriver.Chrome()
@@ -87,13 +88,13 @@ print(event_list[0])
 result = []
 
 for i in event_list:
-	
+
 	d = {}
 	startdt = i['date_utc'].split(' ')
 	try:
 		enddt = i['date2_utc'].split(' ')
 	except:
-		enddt = [startdt[0], ""]	 
+		enddt = [startdt[0], ""]
 	d['title'] = i['title']
 	d['startDate'] = startdt[0]
 	d['endDate'] = enddt[0]
@@ -141,7 +142,7 @@ with open('myJSON.json', 'w') as fp:
 # 	# print(type(c[1]))
 
 # 	d = {}
-	
+
 # 	d['title'] = string
 # 	d['date'] = year-month-day
 # 	d['startTime'] = hh:mm:ss
@@ -150,15 +151,3 @@ with open('myJSON.json', 'w') as fp:
 # 	d['description'] = string
 # 	d['organizer'] = string
 # 	result.append(d)
-
-
-
-
-
-
-
-
-
-
-
-
