@@ -29,7 +29,7 @@ express()
 // Pull JSON, serve to client:
 function jsonLoad(req, res) {
     let data
-    fs.readFile('python_scripts/events.json', (err, inData) => {
+    fs.readFile('linked_events.json', (err, inData) => {
         // TODO: Edit to avoid hard server crashes:
         if (err) {
             res.status(404).send('Watch out for this Bad Request!')
