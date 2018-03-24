@@ -119,6 +119,7 @@ for i in event_list:
 	d['organizer'] = i['group']
 	result.append(d)
 
+
 ###########################################
 	# OrgSync Scraper is below
 ###########################################
@@ -159,8 +160,7 @@ for i in rj['data']:
             d['organizer'] = i['portal']['name']
             result.append(d)
             x += 1
-
-
+            
 
 ###########################################
 	# NYUAD Website Scraper is below
@@ -203,11 +203,3 @@ sorted_result = sorted(result, key = lambda k: k['startDate'])
 
 with open('events.json', 'w') as fp:
     json.dump(sorted_result, fp)
-
-
-
-
-
-
-
-
