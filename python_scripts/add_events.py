@@ -20,7 +20,7 @@ with open('python_scripts/events.json', 'r') as jfile:
     text = jfile.read()
     jjson = json.loads(text)
 
-for e in jjson:
+for e in jjson[:30]:
     event = {
       'summary': e['title'],
       'location': e['location'],
@@ -30,7 +30,7 @@ for e in jjson:
         'timeZone': 'Asia/Dubai',
       },
       'end': {
-        'dateTime': e['endDate'] + 'T' + (e['endTime'] if e['endTime'] else e['startTime']) ,
+        'dateTime': e['endDate'] + 'T' + e['endTime'] ,
         'timeZone': 'Asia/Dubai',
       },
     }
