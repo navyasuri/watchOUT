@@ -49,6 +49,8 @@ function add(req, res) {
             res.status(404).send('Watch out for this Bad Request!')
             console.log("End of error, fool")
       }
+      console.log("py done")
+      //jsonLoad
       //py.end(jsonLoad);
     })
 }

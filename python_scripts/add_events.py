@@ -1,5 +1,5 @@
 from __future__ import print_function
-import googleapiclient.discovery import build
+from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
@@ -17,11 +17,11 @@ event = {
   'location': '800 Howard St., San Francisco, CA 94103',
   'description': 'A chance to hear more about Google\'s developer products.',
   'start': {
-    'dateTime': '2018-03-27T09:00:00-07:00',
+    'dateTime': '2018-03-26T09:00:00-07:00',
     'timeZone': 'Asia/Dubai',
   },
   'end': {
-    'dateTime': '2018-03-27T17:00:00-07:00',
+    'dateTime': '2018-03-26T17:00:00-07:00',
     'timeZone': 'Asia/Dubai',
   },
 }
