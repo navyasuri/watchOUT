@@ -3,7 +3,6 @@ html
     head
         script(src="https://code.jquery.com/jquery-3.3.1.min.js", integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", 
   crossorigin="anonymous", type="text/javascript")
-        script(src="../js/utilities.js", type="text/javascript")
         link(rel='stylesheet' href='../css/style.css')
     body
         h1#category NYUAD Events
@@ -22,5 +21,7 @@ html
                     p.desc= item.description
                     div.legend Who
                     p.org= item.organizer
+                    a(href= item.link)
+                        button(type= button) Add to Your Calendar
                 br
             div.footer

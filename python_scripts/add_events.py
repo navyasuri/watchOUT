@@ -16,11 +16,13 @@ GCAL = build('calendar', 'v3', http=creds.authorize(Http()))
 #for each x in JSON:
 # jfile = json.loads(open('../events.json', 'r'))
 jjson = []
+res = []
 with open('python_scripts/events.json', 'r') as jfile:
     text = jfile.read()
     jjson = json.loads(text)
 
-for e in jjson[160]:
+for e in jjson[:10]:
+    og = e
     event = {
       'summary': e['title'],
       'location': e['location'],
@@ -34,9 +36,11 @@ for e in jjson[160]:
         'timeZone': 'Asia/Dubai',
       },
     }
-#
-
 
     event = GCAL.events().insert(calendarId='nyuadeventful@gmail.com', body=event).execute()
-#print 'Event created: %s' % (event.get('htmlLink'))
+    og['link'] = event.get('htmlLink')
+    res.append(og)
+
+with open('linked_events.json', 'w', encoding='utf-8') as fin:
+    json.dump(res, fin)
 #}
