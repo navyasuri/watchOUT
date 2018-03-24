@@ -2,6 +2,7 @@ from __future__ import print_function
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
+import json
 
 SCOPES = 'https://www.googleapis.com/auth/calendar'
 store = file.Storage('storage.json')
@@ -12,9 +13,14 @@ if not creds or creds.invalid:
 GCAL = build('calendar', 'v3', http=creds.authorize(Http()))
 
 #for each x in JSON:
-jfile = json.loads(open('../events.json', 'r'))
+# jfile = json.loads(open('../events.json', 'r'))
+jjson = []
+with open('events.json', 'r') as jfile:
+    text = jfile.read()
+    jjson = json.loads(text)
 
-for e in jfile:
+for e in jjson:
+    print(e)
     event = {
       'summary': e['title'],
       'location': e['location'],
