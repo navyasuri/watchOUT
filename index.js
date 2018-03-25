@@ -55,18 +55,33 @@ function add(req, res) {
     })
 }
 
-function download(filename, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
-}
+// function AssignDataToLink(indata) {
+//   	var csv = indata;
+// 		var data = new Blob([csv]);
+// 		var downloadLink = document.getElementById("aDownloadCsv");
+//
+// 		downloadLink.href = URL.createObjectURL(data);
+// }
+//
+// function ExportData() {
+//   	var csv = "Id, Value\n1,Muhammad\n";
+// 		var data = new Blob([csv]);
+// 		var downloadLink = document.getElementById("aDownloadCsv2");
+//
+// 		if (downloadLink == null) {
+// 		  downloadLink = document.createElement('a');
+// 		  downloadLink.setAttribute('download', 'DownloadedFile.csv');
+// 		  downloadLink.setAttribute('id', 'aDownloadCsv2');
+//
+//       document.body.appendChild(downloadLink);
+// 		}
+//
+// 		downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+// 		downloadLink.href = URL.createObjectURL(data);
+//
+// 		downloadLink.style.display = 'none';
+// 		downloadLink.click();
+// }
 
 // Start file download.
 //download("hello.txt", "This is the content of my file :)");

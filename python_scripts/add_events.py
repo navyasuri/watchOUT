@@ -40,7 +40,7 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR'''
 
-for e in jjson:
+for e in jjson  :
     og = e
     event = {
       'summary': e['title'],
